@@ -1,6 +1,8 @@
 package main
 
 import (
+	"figures"
+
 	"github.com/donvito/hellomod"
 )
 
@@ -8,4 +10,7 @@ import (
 
 func main() {
 	hellomod.SayHello()
+
+	s := figures.Square{Side: 10.0}
+	figures.Measures(&s)
 }
