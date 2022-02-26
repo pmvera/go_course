@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Index</title>
+    </head>
+    <body>
+        <h3>Hola: {{ .UserName }}, tu edad es {{ .Edad }}</h3>
+
+        <!-- Variables -->
+        {{ with $valor := "Mi variable" }}
+            <p>{{ $valor }}</p>
+        {{ end }}
+
+        {{ if .Activo }}
+            <p>El usuario está activo en la plataforma</p>
+        {{ else }}
+            <p>El usuario no está activo en la plataforma</p>
+        {{ end }}
+
+        {{ if (and .Activo .Admin) }}
+            <p>Eres administrador</p>
+        {{ end }}
+
+        {{ if gt .Edad 22 }}
+            <p>El usuario tiene más de 22 años</p>
+        {{ end }}
+
+        {{ range .Cursos }}
+            <li>{{ .Nombre }}</li>
+        {{ end }}
+    </body>
+</html>
